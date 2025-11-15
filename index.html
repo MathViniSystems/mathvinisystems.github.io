@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathViniSystems</title>
+    <style>
+        /* ===== Palette et couleurs ===== */
+        :root {
+            --primary-light: #FFFFCC;
+            --primary: #FFC66;
+            --primary-dark: #990000;
+            --secondary-light: #CCCC33;
+            --accent-gold: #FFD700;
+            --accent-gray: #B0B0B0;
+            --text-color: #333333;
+            --background: #FAFAFA;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background);
+            color: var(--text-color);
+        }
+
+        /* ===== Menu ===== */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        .menu-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: var(--primary);
+        }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* ===== Conteneur principal ===== */
+        .main-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .main-container h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .main-container p {
+            line-height: 1.6;
+        }
+
+        .main-container button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: var(--primary-dark);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .main-container button:hover {
+            background-color: var(--secondary-light);
+        }
+
+        /* ===== Cadres activités ===== */
+        .activities {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .activity {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .activity-content {
+            max-width: 70%;
+        }
+
+        .activity-content h2 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
+        .activity-content p {
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        .activity button {
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: var(--primary-dark);
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .activity button:hover {
+            background-color: var(--secondary-light);
+        }
+
+        /* Petit cadre plus large pour “solutions physiques” */
+        .activity.large {
+            max-width: 90%;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .activity {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .activity-content {
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== Menu et drapeaux ===== -->
+    <div class="menu-container">
+        <div class="menu-links">
+            <a href="#">Accueil</a>
+            <a href="#">Parcours</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="flags">
+            <img src="images/fr.png" alt="FR">
+            <img src="images/en.png" alt="EN">
+            <img src="images/es.png" alt="ES">
+        </div>
+    </div>
+
+    <!-- ===== Cadre principal ===== -->
+    <div class="main-container">
+        <h1>Simplifier ce qui est simplifiable, automatiser ce qui est automatisable, gagner du temps, gagner en rigueur et réduire les marges d'erreurs.</h1>
+        <p>
+            MathViniSystems c'est un ensemble de services et d'outils innovants avec pour objectif de rendre accessible à tous les domaines, quelque soit leur taille, le pilotage facilité de leur domaine. Notre objectif est de répondre à plusieurs problématiques :
+        </p>
+        <ul>
+            <li>Garantir le respect des règlementations en constante évolution à travers une gestion rigoureuse et facilité de la traçabilité et la vérification de la conformité des documents règlementaires</li>
+            <li>Faciliter l'accès à l'information et notamment aux nouvelles découvertes du secteur et les utiliser pour garantir l'amélioration continue des domaines</li>
+            <li>Garantir la qualité à travers une gestion rigoureuse et organisée des process</li>
+            <li>Apporter des solutions d'automatisation qui vous accompagnent dans les tâches répétitives ou risquant de donner lieu à des erreurs</li>
+        </ul>
+        <button>Découvrir mon parcours et ma vision</button>
+    </div>
+
+    <!-- ===== Cadres activités ===== -->
+    <div class="activities">
+
+        <!-- Mathilde Consulting -->
+        <div class="activity">
+            <div class="activity-content">
+                <h2>Mathilde Consulting</h2>
+                <p>En tant que consultante, je vous accompagne aussi bien dans des projets de restructuration de cave et de process, de mise en place d'essai et de dégustation de manière rigoureuse, de suivi des vins et du vignoble, et de vérification des points à risque de non maîtrise de la qualité et de la règlementation.</p>
+            </div>
+            <button>Prestations et services</button>
+        </div>
+
+        <!-- Mathilde AI -->
+        <div class="activity">
+            <div class="activity-content">
+                <h2>Mathilde AI</h2>
+                <p>En développement</p>
+            </div>
+            <button>Découvrir Mathilde AI</button>
+        </div>
+
+        <!-- Mathilde Softwares -->
+        <div class="activity">
+            <div class="activity-content">
+                <h2>Mathilde Softwares</h2>
+                <p>En développement</p>
+            </div>
+            <button>Découvrir les solutions informatisées</button>
+        </div>
+
+        <!-- Des solutions physiques -->
+        <div class="activity large">
+            <div class="activity-content">
+                <h2>Des solutions physiques</h2>
+                <p>En développement</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
