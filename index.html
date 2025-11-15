@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathViniSystems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
     <style>
         /* ===== Palette et couleurs ===== */
         :root {
-            --primary-light: #FFFFCC;
-            --primary: #FFC66;
-            --primary-dark: #990000;
-            --secondary-light: #CCCC33;
-            --accent-gold: #FFD700;
-            --accent-gray: #B0B0B0;
-            --text-color: #333333;
-            --background: #FAFAFA;
+            --marron-clair: #D2B48C;
+            --beige: #F5F5DC;
+            --vert-olive: #A3B18A;
+            --bordeaux: rgba(153,0,0,0.7);
+            --texte-principal: #333333;
+            --background: #FAFAF5;
+            --bouton-bg: #990000;
+            --bouton-hover: #B22222;
         }
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             background-color: var(--background);
-            color: var(--text-color);
+            color: var(--texte-principal);
         }
 
         /* ===== Menu ===== */
@@ -30,7 +31,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
-            background-color: var(--primary-dark);
+            background-color: var(--bordeaux);
             color: white;
         }
 
@@ -43,7 +44,7 @@
         }
 
         .menu-links a:hover {
-            color: var(--primary);
+            color: var(--marron-clair);
         }
 
         .flags img {
@@ -52,106 +53,63 @@
             cursor: pointer;
         }
 
-        /* ===== Conteneur principal ===== */
-        .main-container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: var(--primary-light);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .main-container h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-
-        .main-container p {
-            line-height: 1.6;
-        }
-
-        .main-container button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: bold;
-            color: white;
-            background-color: var(--primary-dark);
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .main-container button:hover {
-            background-color: var(--secondary-light);
-        }
-
-        /* ===== Cadres activités ===== */
-        .activities {
-            max-width: 1200px;
-            margin: 40px auto;
+        /* ===== Sections ===== */
+        section {
+            padding: 60px 20px;
             display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .activity {
-            display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
             align-items: center;
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            justify-content: space-between;
         }
 
-        .activity-content {
-            max-width: 70%;
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin: 0 0 20px 0;
+            color: var(--bordeaux);
         }
 
-        .activity-content h2 {
-            margin-top: 0;
-            color: var(--primary-dark);
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
         }
 
-        .activity-content p {
-            margin: 15px 0;
-            line-height: 1.5;
-        }
-
-        .activity button {
-            padding: 12px 20px;
-            font-size: 14px;
+        section .btn {
+            padding: 12px 25px;
             font-weight: bold;
-            color: white;
-            background-color: var(--primary-dark);
-            border: none;
             border-radius: 6px;
-            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            background-color: var(--bouton-bg);
             transition: background-color 0.3s;
         }
 
-        .activity button:hover {
-            background-color: var(--secondary-light);
+        section .btn:hover {
+            background-color: var(--bouton-hover);
         }
 
-        /* Petit cadre plus large pour “solutions physiques” */
-        .activity.large {
-            max-width: 90%;
-        }
+        /* ===== Couleurs par section ===== */
+        #main-section { background-color: var(--beige); text-align: center; }
+        #consulting { background-color: var(--marron-clair); color: white; flex-direction: row; }
+        #ai { background-color: var(--vert-olive); color: white; flex-direction: row-reverse; }
+        #softwares { background-color: var(--marron-clair); color: white; flex-direction: row; }
+        #physical { background-color: var(--vert-olive); color: white; text-align: center; flex-direction: column; }
 
-        /* Responsive */
+        /* ===== Responsive ===== */
         @media (max-width: 900px) {
-            .activity {
-                flex-direction: column;
-                align-items: flex-start;
+            section {
+                flex-direction: column !important;
+                text-align: center !important;
             }
-            .activity-content {
-                max-width: 100%;
+            section h2 {
                 margin-bottom: 15px;
+            }
+            section p {
+                max-width: 100%;
+            }
+            section .btn {
+                margin-top: 15px;
             }
         }
     </style>
@@ -172,58 +130,60 @@
         </div>
     </div>
 
-    <!-- ===== Cadre principal ===== -->
-    <div class="main-container">
-        <h1>Simplifier ce qui est simplifiable, automatiser ce qui est automatisable, gagner du temps, gagner en rigueur et réduire les marges d'erreurs.</h1>
+    <!-- ===== Section principale ===== -->
+    <section id="main-section">
+        <h2>Simplifier ce qui est simplifiable, automatiser ce qui est automatisable</h2>
         <p>
-            MathViniSystems c'est un ensemble de services et d'outils innovants avec pour objectif de rendre accessible à tous les domaines, quelque soit leur taille, le pilotage facilité de leur domaine. Notre objectif est de répondre à plusieurs problématiques :
+            Gagner du temps, gagner en rigueur et réduire les marges d'erreurs. MathViniSystems est un ensemble de services et d'outils innovants avec pour objectif de rendre accessible à tous les domaines, quel que soit leur taille, le pilotage facilité de leur domaine. 
+            Notre objectif est de répondre à plusieurs problématiques :
         </p>
         <ul>
-            <li>Garantir le respect des règlementations en constante évolution à travers une gestion rigoureuse et facilité de la traçabilité et la vérification de la conformité des documents règlementaires</li>
-            <li>Faciliter l'accès à l'information et notamment aux nouvelles découvertes du secteur et les utiliser pour garantir l'amélioration continue des domaines</li>
-            <li>Garantir la qualité à travers une gestion rigoureuse et organisée des process</li>
-            <li>Apporter des solutions d'automatisation qui vous accompagnent dans les tâches répétitives ou risquant de donner lieu à des erreurs</li>
+            <li>Garantir le respect des règlementations et la traçabilité</li>
+            <li>Faciliter l'accès à l'information et l'amélioration continue</li>
+            <li>Garantir la qualité via une gestion rigoureuse des process</li>
+            <li>Apporter des solutions d'automatisation pour les tâches répétitives</li>
         </ul>
-        <button>Découvrir mon parcours et ma vision</button>
-    </div>
+        <a href="#" class="btn">Découvrir mon parcours et ma vision</a>
+    </section>
 
-    <!-- ===== Cadres activités ===== -->
-    <div class="activities">
-
-        <!-- Mathilde Consulting -->
-        <div class="activity">
-            <div class="activity-content">
-                <h2>Mathilde Consulting</h2>
-                <p>En tant que consultante, je vous accompagne aussi bien dans des projets de restructuration de cave et de process, de mise en place d'essai et de dégustation de manière rigoureuse, de suivi des vins et du vignoble, et de vérification des points à risque de non maîtrise de la qualité et de la règlementation.</p>
-            </div>
-            <button>Prestations et services</button>
+    <!-- ===== Mathilde Consulting ===== -->
+    <section id="consulting">
+        <div>
+            <h2>Mathilde Consulting</h2>
+            <p>
+                En tant que consultante, je vous accompagne dans la restructuration de cave et de process, la mise en place d'essais et dégustations, le suivi des vins et vignoble, et la vérification des points à risque de non maîtrise de la qualité et de la règlementation.
+            </p>
         </div>
+        <a href="#" class="btn">Prestations et services</a>
+    </section>
 
-        <!-- Mathilde AI -->
-        <div class="activity">
-            <div class="activity-content">
-                <h2>Mathilde AI</h2>
-                <p>En développement</p>
-            </div>
-            <button>Découvrir Mathilde AI</button>
+    <!-- ===== Mathilde AI ===== -->
+    <section id="ai">
+        <div>
+            <h2>Mathilde AI</h2>
+            <p>En développement</p>
         </div>
+        <a href="#" class="btn">Découvrir Mathilde AI</a>
+    </section>
 
-        <!-- Mathilde Softwares -->
-        <div class="activity">
-            <div class="activity-content">
-                <h2>Mathilde Softwares</h2>
-                <p>En développement</p>
-            </div>
-            <button>Découvrir les solutions informatisées</button>
+    <!-- ===== Mathilde Softwares ===== -->
+    <section id="softwares">
+        <div>
+            <h2>Mathilde Softwares</h2>
+            <p>En développement</p>
         </div>
+        <a href="#" class="btn">Découvrir les solutions informatisées</a>
+    </section>
 
-        <!-- Des solutions physiques -->
-        <div class="activity large">
-            <div class="activity-content">
-                <h2>Des solutions physiques</h2>
-                <p>En développement</p>
-            </div>
-        </div>
+    <!-- ===== Solutions physiques ===== -->
+    <section id="physical">
+        <h2>Des solutions physiques</h2>
+        <p>En développement</p>
+    </section>
+
+</body>
+</html>
+
 
     </div>
 
