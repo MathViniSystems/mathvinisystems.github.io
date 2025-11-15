@@ -4,47 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MathViniSystems</title>
+    <!-- Police pour titres et corps -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
     <style>
-        /* ===== Palette et couleurs ===== */
+        /* ===== Palette de couleurs ===== */
         :root {
-            --marron-clair: #D2B48C;
-            --beige: #F5F5DC;
-            --vert-olive: #A3B18A;
-            --bordeaux: rgba(153,0,0,0.7);
-            --texte-principal: #333333;
-            --background: #FAFAF5;
-            --bouton-bg: #990000;
-            --bouton-hover: #B22222;
+            --header-bg: #ECECEC; /* gris blanc cassé */
+            --text-color: #000000;
+            --accueil-bg: #FFF8E1; /* jaune nude */
+            --consulting-bg: #D2B48C; /* marron clair */
+            --ai-bg: rgba(153,0,0,0.7); /* bordeaux transparent */
+            --softwares-bg: #A3B18A; /* vert olive léger */
+            --physical-bg: #FFF8E1; /* même que accueil */
+            --btn-bg: #ECECEC; /* gris blanc cassé */
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
         }
 
+        /* ===== Global ===== */
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: var(--background);
-            color: var(--texte-principal);
+            background-color: var(--physical-bg);
+            color: var(--text-color);
         }
 
-        /* ===== Menu ===== */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===== Entête ===== */
         .menu-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
-            background-color: var(--bordeaux);
-            color: white;
+            background-color: var(--header-bg);
+            box-shadow: 0 4px 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .menu-links a {
-            color: white;
-            text-decoration: none;
             margin: 0 15px;
             font-weight: bold;
             transition: color 0.3s;
         }
 
         .menu-links a:hover {
-            color: var(--marron-clair);
+            color: #990000;
         }
 
         .flags img {
@@ -53,20 +63,63 @@
             cursor: pointer;
         }
 
-        /* ===== Sections ===== */
+        /* ===== Section accueil ===== */
+        #main-section {
+            background-color: var(--accueil-bg);
+            text-align: center;
+            padding: 80px 20px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+        }
+
+        #main-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--text-color);
+            margin-bottom: 25px;
+        }
+
+        #main-section p {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        #main-section .btn {
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 6px;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.3s;
+        }
+
+        #main-section .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Sections Consulting, AI, Softwares ===== */
         section {
-            padding: 60px 20px;
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+            margin-bottom: 20px;
+            transition: transform 0.4s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
         }
 
         section h2 {
             font-family: 'Playfair Display', serif;
             font-size: 32px;
-            margin: 0 0 20px 0;
-            color: var(--bordeaux);
+            margin-bottom: 20px;
         }
 
         section p {
@@ -79,69 +132,80 @@
             padding: 12px 25px;
             font-weight: bold;
             border-radius: 6px;
-            text-decoration: none;
-            color: white;
-            background-color: var(--bouton-bg);
-            transition: background-color 0.3s;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.3s;
         }
 
         section .btn:hover {
-            background-color: var(--bouton-hover);
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
         }
 
         /* ===== Couleurs par section ===== */
-        #main-section { background-color: var(--beige); text-align: center; }
-        #consulting { background-color: var(--marron-clair); color: white; flex-direction: row; }
-        #ai { background-color: var(--vert-olive); color: white; flex-direction: row-reverse; }
-        #softwares { background-color: var(--marron-clair); color: white; flex-direction: row; }
-        #physical { background-color: var(--vert-olive); color: white; text-align: center; flex-direction: column; }
+        #consulting { background-color: var(--consulting-bg); color: white; flex-direction: row; }
+        #ai { background-color: var(--ai-bg); color: white; flex-direction: row; }
+        #softwares { background-color: var(--softwares-bg); color: white; flex-direction: row; }
+        #physical { background-color: var(--physical-bg); text-align: center; padding: 80px 20px; }
 
         /* ===== Responsive ===== */
         @media (max-width: 900px) {
-            section {
-                flex-direction: column !important;
-                text-align: center !important;
-            }
-            section h2 {
-                margin-bottom: 15px;
-            }
-            section p {
-                max-width: 100%;
-            }
-            section .btn {
-                margin-top: 15px;
-            }
+            section { flex-direction: column; text-align: center; }
+            section h2 { margin-bottom: 15px; }
+            section p { max-width: 100%; margin-bottom: 15px; }
+            section .btn { margin-top: 15px; }
+        }
+
+        /* ===== Pied de page ===== */
+        footer {
+            background-color: var(--header-bg);
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 -4px 10px var(--shadow-color);
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #990000;
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== Menu et drapeaux ===== -->
+    <!-- ===== Entête ===== -->
     <div class="menu-container">
-        <div class="menu-links">
-            <a href="#">Accueil</a>
-            <a href="#">Parcours</a>
-            <a href="#">Contact</a>
-        </div>
         <div class="flags">
             <img src="images/fr.png" alt="FR">
             <img src="images/en.png" alt="EN">
             <img src="images/es.png" alt="ES">
         </div>
+        <div class="menu-links">
+            <a href="#">Accueil</a>
+            <a href="#">Parcours</a>
+            <a href="#">Contact</a>
+        </div>
     </div>
 
-    <!-- ===== Section principale ===== -->
+    <!-- ===== Section Accueil ===== -->
     <section id="main-section">
-        <h2>Simplifier ce qui est simplifiable, automatiser ce qui est automatisable Gagner du temps, gagner en rigueur et réduire les marges d'erreurs.</h2>
+        <h2>Simplifier ce qui est simplifiable, automatiser ce qui est automatisable, gagner du temps, favoriser la rigueur et réduire les marges d'erreurs.</h2>
         <p>
-            MathViniSystems est un ensemble de services et d'outils innovants avec pour objectif de rendre accessible à tous les domaines, quel que soit leur taille, le pilotage facilité de leur domaine. 
-            Notre objectif est de répondre à plusieurs problématiques :
+            MathViniSystems est un ensemble de services et d'outils innovants avec pour objectif de rendre accessible à tous les domaines, quel que soit leur taille, le pilotage facilité de leur domaine. Notre objectif est de répondre à plusieurs problématiques :
         </p>
+        <ul style="text-align:left; display:inline-block;">
             <li>Garantir le respect des règlementations et la traçabilité</li>
             <li>Faciliter l'accès à l'information et l'amélioration continue</li>
             <li>Garantir la qualité via une gestion rigoureuse des process</li>
             <li>Apporter des solutions d'automatisation pour les tâches répétitives</li>
         </ul>
+        <br>
         <a href="#" class="btn">Découvrir mon parcours et ma vision</a>
     </section>
 
@@ -176,15 +240,18 @@
 
     <!-- ===== Solutions physiques ===== -->
     <section id="physical">
-        <h2>Des solutions physiques</h2>
-        <p>En développement</p>
+        <h2 style="font-size:24px;">Des solutions physiques</h2>
+        <p style="font-size:14px;">En développement</p>
     </section>
 
-</body>
-</html>
-
-
-    </div>
+    <!-- ===== Pied de page ===== -->
+    <footer>
+        &copy; 2025 MathViniSystems | 
+        <a href="#">Mentions légales</a> | 
+        <a href="#">Conditions générales de vente</a> | 
+        <a href="#">Données personnelles</a> | 
+        <a href="#">Cookies</a>
+    </footer>
 
 </body>
 </html>
