@@ -3,107 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MathViniSystems – Contact</title>
-
-    <!-- Police -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+    <title>Contact – MathViniSystems</title>
 
     <style>
-        /* ===== Palette ===== */
         :root {
-            --header-bg: #ECECEC;
-            --text-color: #000000;
-            --accueil-bg: #FFF8E1;
-            --consulting-bg: #D2B48C;
-            --ai-bg: rgba(153, 0, 0, 0.7);
-            --softwares-bg: #A3B18A;
-            --physical-bg: #FFF8E1;
-            --btn-bg: #ECECEC;
-            --btn-hover: #DADADA;
-            --shadow-color: rgba(0,0,0,0.15);
+            --header-bg: #f2f2f0; /* gris blanc cassé */
+            --accueil-bg: #f4e7c6; /* beige nude */
+            --consulting-bg: #d9c2a3; /* marron clair */
+            --ai-bg: rgba(120, 0, 30, 0.15); /* bordeaux transparent */
+            --soft-bg: #d6dfc7; /* vert olive léger */
+            --text-color: #333;
+            --shadow-color: rgba(0, 0, 0, 0.15);
+        }
+
+        /* ----- Layout général ----- */
+        html, body {
+            height: 100%;
         }
 
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: var(--physical-bg);
             color: var(--text-color);
+            background-color: var(--accueil-bg);
+            display: flex;
+            flex-direction: column;
         }
 
-        a {
-            color: inherit;
-            text-decoration: none;
+        header {
+            background-color: var(--header-bg);
+            padding: 20px;
+            box-shadow: 0 4px 10px var(--shadow-color);
         }
 
-        /* ===== Entête ===== */
-        .menu-container {
+        header nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: var(--header-bg);
-            box-shadow: 0 4px 10px var(--shadow-color);
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
-        .flags img {
-            width: 30px;
-            margin-right: 10px;
-        }
-
-        .menu-links a {
-            margin-left: 20px;
+        nav a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: var(--text-color);
             font-weight: bold;
         }
 
-        .menu-links a:hover {
-            color: #990000;
+        .flags img {
+            height: 25px;
+            margin-left: 10px;
         }
 
-        /* ===== Mise en page principale ===== */
-        #contact-wrapper {
+        /* ----- Section contact ----- */
+        #contact-main {
             max-width: 1100px;
-            margin: 60px auto;
+            margin: 40px auto;
             display: flex;
-            justify-content: space-between;
             gap: 40px;
             padding: 20px;
         }
 
-        /* ===== Section coordonnées ===== */
-        #contact-info {
+        /* Colonne gauche */
+        .contact-info {
             flex: 1;
+            background-color: var(--consulting-bg);
             padding: 30px;
-            background-color: white;
+            border-radius: 12px;
             box-shadow: 0 6px 15px var(--shadow-color);
-            border-radius: 10px;
         }
 
-        #contact-info h2 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
+        .contact-info h2 {
+            margin-top: 0;
         }
 
-        #contact-info p {
-            font-size: 17px;
-            line-height: 1.7;
-        }
-
-        /* ===== Section formulaire ===== */
-        #contact-form {
+        /* Colonne droite */
+        .contact-form {
             flex: 1;
+            background-color: var(--soft-bg);
             padding: 30px;
-            background-color: white;
+            border-radius: 12px;
             box-shadow: 0 6px 15px var(--shadow-color);
-            border-radius: 10px;
-        }
-
-        #contact-form h2 {
-            font-family: 'Playfair Display', serif;
-            margin-bottom: 20px;
-            text-align: center;
         }
 
         form {
@@ -114,100 +93,87 @@
 
         input, textarea {
             padding: 12px;
-            border-radius: 6px;
+            border-radius: 8px;
             border: 1px solid #ccc;
-            font-size: 15px;
+            font-size: 1rem;
         }
 
         .btn {
-            background-color: var(--btn-bg);
-            padding: 12px;
-            border-radius: 6px;
+            padding: 12px 18px;
+            background-color: var(--header-bg);
+            text-decoration: none;
+            border-radius: 8px;
             font-weight: bold;
+            border: 1px solid #bbb;
             cursor: pointer;
-            box-shadow: 0 4px 8px var(--shadow-color);
-            transition: 0.3s;
+            box-shadow: 0 3px 8px var(--shadow-color);
         }
 
         .btn:hover {
-            background-color: var(--btn-hover);
-            transform: translateY(-3px);
+            transform: scale(1.02);
+            transition: 0.2s;
         }
 
-        /* ===== Pied de page ===== */
+        /* ----- Footer ----- */
         footer {
             background-color: var(--header-bg);
             text-align: center;
             padding: 20px;
-            margin-top: 60px;
             box-shadow: 0 -4px 10px var(--shadow-color);
-        }
-
-        footer a {
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            color: #990000;
-        }
-
-        /* ===== Responsive ===== */
-        @media (max-width: 900px) {
-            #contact-wrapper {
-                flex-direction: column;
-            }
+            margin-top: auto;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== MENU ===== -->
-    <div class="menu-container">
-        <div class="flags">
-            <img src="images/fr.png" alt="FR">
-            <img src="images/en.png" alt="EN">
-            <img src="images/es.png" alt="ES">
+    <!-- ----- HEADER ----- -->
+    <header>
+        <nav>
+            <div class="menu">
+                <a href="index.html">Accueil</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div class="flags">
+                <img src="images/fr.png" alt="FR">
+                <img src="images/en.png" alt="EN">
+                <img src="images/es.png" alt="ES">
+            </div>
+        </nav>
+    </header>
+
+    <!-- ----- CONTENU PRINCIPAL ----- -->
+    <section id="contact-main">
+
+        <!-- Colonne gauche -->
+        <div class="contact-info">
+            <h2>Me contacter directement</h2>
+
+            <p><strong>Téléphone / WhatsApp :</strong><br>
+            +33 6 74 26 95 08</p>
+
+            <p><strong>E-mail :</strong><br>
+            mathilde.pebre@math-vini-systems.com</p>
         </div>
 
-        <div class="menu-links">
-            <a href="index.html">Accueil</a>
-            <a href="parcours.html">Parcours</a>
-            <a href="contact.html">Contact</a>
-        </div>
-    </div>
-
-    <!-- ===== CONTENU ===== -->
-    <div id="contact-wrapper">
-
-        <!-- Coordonnées -->
-        <div id="contact-info">
-            <h2>Me contacter</h2>
-            <p><strong>Téléphone / WhatsApp :</strong><br>+33 6 74 26 95 08</p>
-            <p><strong>E-mail :</strong><br>mathilde.pebre@math-vini-systems.com</p>
-        </div>
-
-        <!-- Formulaire -->
-        <div id="contact-form">
+        <!-- Colonne droite -->
+        <div class="contact-form">
             <h2>Formulaire de contact</h2>
 
             <form>
                 <input type="text" placeholder="Votre nom" required>
                 <input type="email" placeholder="Votre e-mail" required>
                 <textarea rows="6" placeholder="Votre message" required></textarea>
-                <button class="btn" type="submit">Envoyer</button>
+                <button class="btn">Envoyer</button>
             </form>
         </div>
 
-    </div>
+    </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ----- FOOTER ----- -->
     <footer>
-        © 2025 MathViniSystems |
-        <a href="#">Mentions légales</a> |
-        <a href="#">Conditions générales de vente</a> |
-        <a href="#">Données personnelles</a> |
-        <a href="#">Cookies</a>
+        © 2025 MathViniSystems — Mentions légales | Conditions générales de vente | Données personnelles | Cookies
     </footer>
 
 </body>
