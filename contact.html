@@ -1,1 +1,83 @@
-<h1>Test contact page</h1>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - MathViniSystems</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== En-tête ===== -->
+    <header style="background-color:#f5f5f5; box-shadow:0 4px 10px rgba(0,0,0,0.15); padding:20px 0;">
+        <div style="
+            max-width:1200px;
+            margin:0 auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:0 20px;
+        ">
+            <!-- Menu -->
+            <nav style="font-size:1.1rem;">
+                <a href="index.html" style="margin-right:15px;">Accueil</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!-- Drapeaux -->
+            <div>
+                <img src="images/fr.png" width="32" alt="FR">
+                <img src="images/en.png" width="32" alt="EN">
+                <img src="images/es.png" width="32" alt="ES">
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Informations directes ===== -->
+    <section style="
+        background-color:#fff8f0;
+        max-width:900px;
+        margin:60px auto 40px;
+        padding:40px 30px;
+        box-shadow:0 6px 15px rgba(0,0,0,0.2);
+        border-radius:10px;
+    ">
+        <h2 style="margin-bottom:20px; color:#550000;">Me contacter directement</h2>
+        <p style="font-size:1.15rem;">
+            <strong>Téléphone / WhatsApp :</strong> +33 674269508
+        </p>
+        <p style="font-size:1.15rem; margin-top:10px;">
+            <strong>E-mail :</strong>
+            <a href="mailto:mathilde.pebre@math-vini-systems.com">
+                mathilde.pebre@math-vini-systems.com
+            </a>
+        </p>
+    </section>
+
+    <!-- ===== Formulaire ===== -->
+    <section style="
+        background-color:#f0f0e0;
+        max-width:700px;
+        margin:0 auto 80px;
+        padding:40px 30px;
+        box-shadow:0 6px 15px rgba(0,0,0,0.25);
+        border-radius:10px;
+    ">
+        <h2 style="margin-bottom:20px; color:#550000;">Formulaire de contact</h2>
+
+        <form style="display:flex; flex-direction:column; gap:20px;">
+            <input type="text" placeholder="Votre nom" required style="padding:12px; font-size:1rem;">
+            <input type="email" placeholder="Votre e-mail" required style="padding:12px; font-size:1rem;">
+            <textarea placeholder="Votre message" rows="5" required style="padding:12px; font-size:1rem;"></textarea>
+
+            <button type="submit" style="
+                padding:14px;
+                font-size:1rem;
+                background-color:#f5f5f5;
+                border:none;
+                border-radius:6px;
+                cursor:pointer;
+                color:#550000;
+                box-shadow:0 4px 10px rgba(0,0,0,0.2);
+
