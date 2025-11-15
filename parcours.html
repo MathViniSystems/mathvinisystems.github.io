@@ -1,1 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours – MathViniSystems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
 
+    <style>
+        :root {
+            --header-bg: #ECECEC;
+            --btn-bg: #ECECEC;
+            --btn-hover: #DADADA;
+            --shadow-color: rgba(0,0,0,0.15);
+            --text-color: #000000;
+            --physical-bg: #FFF8E1;
+            --green-box: #dce8d0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--physical-bg);
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        /* HEADER */
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--header-bg);
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .flags img { width: 30px; margin-right: 10px; }
+        .menu-links a { margin-left: 20px; font-weight: bold; }
+        .menu-links a:hover { color: #990000; }
+
+        /* SECTION */
+        .section-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .intro-photo {
+            width: 100%;
+            height: 350px;
+            background-color: #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            margin-bottom: 40px;
+        }
+        .text-block {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        /* 4 images grid */
+        .grid-photos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 40px 0;
+        }
+        .grid-photos div {
+            background-color: #ccc;
+            height: 180px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .green-box {
+            background-color: var(--green-box);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+            font-size: 18px;
+            line-height: 1.7;
+            margin: 50px 0;
+        }
+        .green-box-title {
+            font-family: "Playfair Display", serif;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background-color: var(--btn-bg);
+            border-radius: 8px;
+            font-weight: bold;
+            border: 1px solid #bbb;
+            cursor: pointer;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--header-bg);
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 -4px 10px var(--shadow-color);
+            margin-top: 80px;
+        }
+        footer a { margin: 0 10px; }
+        footer a:hover { color: #990000; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .grid-photos { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="menu-container">
+        <div class="flags">
+            <a href="parcours.html"><img src="images/fr.png" alt="FR"></a>
+            <a href="parcours_en.html"><img src="images/en.png" alt="EN"></a>
+            <a href="parcours_es.html"><img src="images/es.png" alt="ES"></a>
+        </div>
+        <div class="menu-links">
+            <a href="index.html">Accueil</a>
+            <a href="parcours.html">Parcours</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+
+    <div class="section-container">
+
+        <div class="intro-photo"></div>
+
+        <div class="text-block">
+            Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
+        </div>
+
+        <div class="grid-photos">
+            <div></div><div></div><div></div><div></div>
+        </div>
+
+        <div class="text-block">
+            J'ai eu la chance de pouvoir orienter ma formation à l'international – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an.
+        </div>
+
+        <h3 style="font-family:'Playfair Display', serif; text-align:center; margin:40px 0; font-size:28px;">
+            Des expériences qui m'ont permis d'acquérir des compétences riches et variées avec une vision internationale
+        </h3>
+
+        <div class="intro-photo"></div>
+
+        <div class="green-box">
+            <div class="green-box-title">Ma vision de l'œnologie et de la viticulture</div>
+            J'ai à cœur de développer une méthode de travail en accord avec ma personnalité. Rigoureuse, polyvalente et perfectionniste depuis toujours, j'ai toujours mené toutes mes missions motivée et animée par la joie d'aider et de partager mes connaissances et compétences.<br><br>
+            Mon projet est avant tout de garantir qualité, différenciation et adéquation avec les marchés, tout en facilitant votre travail au quotidien :<br>
+            – en rendant accessibles les dernières connaissances et l'information scientifique ;<br>
+            – en apprenant aux plus petits domaines à conduire des essais d'amélioration continue et d'innovation ;<br>
+            – en utilisant mon goût pour le détail pour garantir le respect de la règlementation et la maîtrise de la qualité.
+
+            <br><br>
+            <a href="contact.html" class="btn">Découvrir comment je peux vous aider</a>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2025 MathViniSystems | 
+        <a href="#">Mentions légales</a> | 
+        <a href="#">Conditions générales de vente</a> | 
+        <a href="#">Données personnelles</a> | 
+        <a href="#">Cookies</a>
+    </footer>
+
+</body>
+</html>
