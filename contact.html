@@ -184,6 +184,25 @@
             <form id="form-contact" action="https://formspree.io/f/mjkjrrwd" method="POST">
                 <input type="text" name="Nom" placeholder="Votre nom" required>
                 <input type="email" name="Email" placeholder="Votre e-mail" required>
+                <form id="form-contact" action="https://formspree.io/f/mjkjrrwd" method="POST">
+    <input type="text" name="Nom" placeholder="Votre nom" required>
+    <input type="email" name="Email" placeholder="Votre e-mail" required>
+
+    <!-- Champ sélection du service -->
+    <label for="service" style="font-weight:bold;">Quel service vous intéresse ?</label>
+    <select name="Service" id="service" required style="padding:12px; border-radius:8px; border:1px solid #ccc; font-size:1rem;">
+        <option value="" disabled selected>Choisissez un service</option>
+        <option value="Consulting">Consulting</option>
+        <option value="Mathilde AI">Mathilde AI</option>
+        <option value="Logiciels et applications web">Logiciels et applications web</option>
+        <option value="TubProtect">TubProtect</option>
+        <option value="Autres/Plusieurs">Autres/Plusieurs</option>
+    </select>
+
+    <textarea name="Message" rows="6" placeholder="Votre message" required></textarea>
+    <button class="btn" type="submit">Envoyer</button>
+</form>
+
                 <textarea name="Message" rows="6" placeholder="Votre message" required></textarea>
                 <button class="btn" type="submit">Envoyer</button>
             </form>
