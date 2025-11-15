@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact – MathViniSystems</title>
+    <title>MathViniSystems – Contact</title>
 
     <!-- Police -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
 
     <style>
-        /* ===== Palette de couleurs ===== */
+        /* ===== Palette ===== */
         :root {
             --header-bg: #ECECEC;
             --text-color: #000000;
             --accueil-bg: #FFF8E1;
             --consulting-bg: #D2B48C;
-            --ai-bg: rgba(153,0,0,0.7);
+            --ai-bg: rgba(153, 0, 0, 0.7);
             --softwares-bg: #A3B18A;
             --physical-bg: #FFF8E1;
             --btn-bg: #ECECEC;
@@ -30,116 +30,139 @@
             color: var(--text-color);
         }
 
-        a { text-decoration: none; color: inherit; }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-        /* ===== Header ===== */
+        /* ===== Entête ===== */
         .menu-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
             background-color: var(--header-bg);
             box-shadow: 0 4px 10px var(--shadow-color);
+            padding: 15px 30px;
             position: sticky;
             top: 0;
             z-index: 100;
         }
 
-        .menu-links a {
-            margin: 0 15px;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        .menu-links a:hover { color: #990000; }
-
         .flags img {
             width: 30px;
-            margin-left: 10px;
-            cursor: pointer;
+            margin-right: 10px;
         }
 
-        /* ===== Section Contact ===== */
-        #contact-section {
-            background-color: var(--accueil-bg);
-            padding: 80px 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 6px 15px var(--shadow-color);
+        .menu-links a {
+            margin-left: 20px;
+            font-weight: bold;
         }
 
-        #contact-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            margin-bottom: 20px;
+        .menu-links a:hover {
+            color: #990000;
         }
 
+        /* ===== Mise en page principale ===== */
+        #contact-wrapper {
+            max-width: 1100px;
+            margin: 60px auto;
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        /* ===== Section coordonnées ===== */
         #contact-info {
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            font-size: 18px;
+            flex: 1;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 6px 15px var(--shadow-color);
+            border-radius: 10px;
+        }
+
+        #contact-info h2 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 20px;
+        }
+
+        #contact-info p {
+            font-size: 17px;
             line-height: 1.7;
         }
 
-        /* ===== Formulaire ===== */
-        .form-container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
+        /* ===== Section formulaire ===== */
+        #contact-form {
+            flex: 1;
             padding: 30px;
-            border-radius: 10px;
+            background-color: white;
             box-shadow: 0 6px 15px var(--shadow-color);
+            border-radius: 10px;
         }
 
-        .form-container h3 {
+        #contact-form h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 26px;
             margin-bottom: 20px;
             text-align: center;
         }
 
-        .form-container input,
-        .form-container textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0 20px 0;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 16px;
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        .form-container button {
-            width: 100%;
+        input, textarea {
             padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 15px;
+        }
+
+        .btn {
             background-color: var(--btn-bg);
-            border: none;
+            padding: 12px;
             border-radius: 6px;
             font-weight: bold;
-            box-shadow: 0 4px 8px var(--shadow-color);
             cursor: pointer;
-            transition: all 0.3s;
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: 0.3s;
         }
 
-        .form-container button:hover {
+        .btn:hover {
             background-color: var(--btn-hover);
             transform: translateY(-3px);
         }
 
-        /* ===== Footer ===== */
+        /* ===== Pied de page ===== */
         footer {
             background-color: var(--header-bg);
             text-align: center;
             padding: 20px;
-            font-size: 14px;
+            margin-top: 60px;
             box-shadow: 0 -4px 10px var(--shadow-color);
         }
 
-        footer a:hover { color: #990000; }
+        footer a {
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #990000;
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            #contact-wrapper {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- ===== Header ===== -->
+    <!-- ===== MENU ===== -->
     <div class="menu-container">
         <div class="flags">
             <img src="images/fr.png" alt="FR">
@@ -150,40 +173,42 @@
         <div class="menu-links">
             <a href="index.html">Accueil</a>
             <a href="parcours.html">Parcours</a>
-            <a href="contact.html" style="color:#990000;">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
     </div>
 
-    <!-- ===== Section Contact ===== -->
-    <section id="contact-section">
-        <h2>Contact</h2>
+    <!-- ===== CONTENU ===== -->
+    <div id="contact-wrapper">
 
+        <!-- Coordonnées -->
         <div id="contact-info">
-            📞 <strong>Téléphone / WhatsApp :</strong> +33 6 74 26 95 08<br>
-            📧 <strong>Email :</strong> <a href="mailto:mathilde.pebre@math-vini-systems.com">mathilde.pebre@math-vini-systems.com</a>
+            <h2>Me contacter</h2>
+            <p><strong>Téléphone / WhatsApp :</strong><br>+33 6 74 26 95 08</p>
+            <p><strong>E-mail :</strong><br>mathilde.pebre@math-vini-systems.com</p>
         </div>
 
         <!-- Formulaire -->
-        <div class="form-container">
-            <h3>Formulaire de contact</h3>
+        <div id="contact-form">
+            <h2>Formulaire de contact</h2>
 
             <form>
-                <input type="text" name="name" placeholder="Votre nom" required>
-                <input type="email" name="email" placeholder="Votre email" required>
-                <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
-                <button type="submit">Envoyer</button>
+                <input type="text" placeholder="Votre nom" required>
+                <input type="email" placeholder="Votre e-mail" required>
+                <textarea rows="6" placeholder="Votre message" required></textarea>
+                <button class="btn" type="submit">Envoyer</button>
             </form>
         </div>
-    </section>
 
-    <!-- ===== Footer ===== -->
+    </div>
+
+    <!-- ===== FOOTER ===== -->
     <footer>
-        &copy; 2025 MathViniSystems |
+        © 2025 MathViniSystems |
         <a href="#">Mentions légales</a> |
-        <a href="#">CGV</a> |
+        <a href="#">Conditions générales de vente</a> |
         <a href="#">Données personnelles</a> |
         <a href="#">Cookies</a>
     </footer>
 
 </body>
-</html> 
+</html>
