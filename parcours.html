@@ -69,27 +69,26 @@
             gap: 15px;
             margin: 40px 0;
         }
-        .grid-photos div {
-    background-color: #ccc;
-    height: 180px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px var(--shadow-color);
-}
 
-.grid-photos img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px var(--shadow-color);
-}
+        .photo-item {
+            text-align: center;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
         .grid-photos-caption {
-    text-align: center;
-    font-size: 14px;  /* taille petite */
-    font-style: italic;  /* italique */
-    margin-top: 10px;  /* espace au-dessus */
-    color: #555;  /* gris discret */
-}
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 8px;
+            color: #555;
+        }
+
         .green-box {
             background-color: var(--green-box);
             padding: 35px;
@@ -162,16 +161,29 @@
         <div class="text-block">
             Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
         </div>
-        
+
+        <!-- PHOTOS + LÉGENDES CORRIGÉES -->
         <div class="grid-photos">
-    <img src="images/exp1.jpeg" alt="Photo 1">
-    <img src="images/exp2.jpeg" alt="Photo 2">
-    <img src="images/exp3.png" alt="Photo 3">
-    <img src="images/exp4.jpeg" alt="Photo 4">
-</div>
-        <div class="grid-photos-caption">
-    <em>Provence, 2022; Bullas, 2025; Tasmania, 2023; Lanzarote, 2024</em>
-</div>
+            <div class="photo-item">
+                <img src="images/exp1.jpeg" alt="Provence 2022">
+                <div class="grid-photos-caption">Provence, 2022</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="images/exp2.jpeg" alt="Bullas 2025">
+                <div class="grid-photos-caption">Bullas, 2025</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="images/exp3.png" alt="Tasmania 2023">
+                <div class="grid-photos-caption">Tasmania, 2023</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="images/exp4.jpeg" alt="Lanzarote 2024">
+                <div class="grid-photos-caption">Lanzarote, 2024</div>
+            </div>
+        </div>
 
         <div class="text-block">
             J'ai eu la chance de pouvoir orienter ma formation à l'international <br>
@@ -212,3 +224,4 @@
 
 </body>
 </html>
+
