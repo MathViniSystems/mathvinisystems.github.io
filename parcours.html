@@ -48,6 +48,7 @@
             margin: 50px auto;
             padding: 20px;
         }
+        /* La classe .intro-photo n'est plus utilisée pour la première image, mais gardée pour la deuxième */
         .intro-photo {
             width: 100%;
             height: 350px;
@@ -56,6 +57,44 @@
             box-shadow: 0 4px 12px var(--shadow-color);
             margin-bottom: 40px;
         }
+
+        /* NOUVELLE MISE EN PAGE POUR TEXTE À GAUCHE ET IMAGE À DROITE */
+        .text-image-section {
+            display: flex;
+            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
+            align-items: flex-start; /* Aligne les éléments en haut */
+            margin-bottom: 40px;
+            gap: 30px; /* Espace un peu plus grand entre texte et image */
+        }
+
+        .text-image-section .text-block-left {
+            flex: 1; /* Prend l'espace disponible */
+            min-width: 300px; /* Taille minimale pour le texte */
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .text-image-section .intro-photo-right {
+            flex-shrink: 0; /* Empêche l'image de rétrécir */
+            /* LARGEUR RÉDUITE à 30% pour forcer l'aspect portrait (long et étroit) */
+            width: 30%; 
+            height: 400px; /* J'ai augmenté un peu la hauteur pour accentuer l'effet portrait */
+            background-color: #ccc;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+            
+            /* Styles pour le placeholder */
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #555;
+            font-style: italic;
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        /* TEXTE SIMPLE */
         .text-block {
             font-size: 18px;
             line-height: 1.7;
@@ -91,7 +130,6 @@
 
         /* GREEN BOX (ANIMATED LIKE HOMEPAGE SECTIONS) */
         .green-box {
-            /* Rétablissement en div pour ne pas être cliquable */
             background-color: var(--green-box);
             padding: 35px;
             border-radius: 12px;
@@ -99,12 +137,12 @@
             font-size: 18px;
             line-height: 1.7;
             margin: 50px 0;
-            transition: transform 0.4s, box-shadow 0.4s; /* Garde l'animation */
+            transition: transform 0.4s, box-shadow 0.4s;
         }
 
         .green-box:hover {
-            transform: translateY(-5px); /* Animation de soulèvement au survol */
-            box-shadow: 0 10px 20px rgba(0,0,0,0.25); /* Augmentation de l'ombre au survol */
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
         }
 
         .green-box-title {
@@ -116,7 +154,7 @@
         /* BUTTONS (SAME HOVER EFFECT AS HOMEPAGE) */
         .btn {
             display: inline-block;
-            margin-top: 20px; /* Ajout d'une marge au bouton pour l'espacement */
+            margin-top: 20px;
             padding: 12px 18px;
             background-color: var(--btn-bg);
             border-radius: 8px;
@@ -144,7 +182,17 @@
 
         /* RESPONSIVE */
         @media (max-width: 900px) {
+            /* Pour la grille photo, on réduit à 2 colonnes sur tablette */
             .grid-photos { grid-template-columns: repeat(2, 1fr); }
+            /* NOTE : J'ai enlevé le changement en colonne pour le texte/image ici pour que ça reste côte à côte plus longtemps */
+        }
+
+        @media (max-width: 700px) {
+            /* C'est seulement en dessous de 700px (mobile) que l'image passera sous le texte */
+            .text-image-section { flex-direction: column; } 
+            .text-image-section .intro-photo-right { width: 100%; margin-top: 20px; height: 300px; }
+            
+            .grid-photos { grid-template-columns: 1fr; } /* 1 colonne photo sur mobile */
         }
     </style>
 </head>
@@ -166,13 +214,23 @@
 
     <div class="section-container">
 
-        <div class="intro-photo"></div>
-
-        <div class="text-block">
-            Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
+        <!-- NOUVELLE STRUCTURE : TEXTE À GAUCHE, IMAGE À DROITE -->
+        <div class="text-image-section">
+            <div class="text-block-left">
+                Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
+            </div>
+            <!-- EMPLACEMENT IMAGE (Style Portrait) -->
+            <div class="intro-photo-right">
+                Votre photo portrait ici<br>(30% largeur)
+            </div>
         </div>
 
-        <!-- PHOTOS + LÉGENDES CORRIGÉES -->
+        <!-- PARAGRAPHE "J'AI EU LA CHANCE..." -->
+        <div class="text-block">
+            J'ai eu la chance de pouvoir orienter ma formation à l'international <br> – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires <br> – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques <br> – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales <br> – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an. 
+        </div>
+
+        <!-- PHOTOS + LÉGENDES -->
         <div class="grid-photos">
             <div class="photo-item">
                 <img src="images/exp1.jpeg" alt="Provence 2022" onerror="this.onerror=null;this.src='https://placehold.co/400x180/DCDCDC/555555?text=Exp+1'">
@@ -195,24 +253,21 @@
             </div>
         </div>
 
-        <div class="text-block">
-            J'ai eu la chance de pouvoir orienter ma formation à l'international <br> – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires <br> – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques <br> – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales <br> – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an. 
-        </div>
-
+        <!-- NOUVEAU TITRE -->
         <h3 style="font-family:'Playfair Display', serif; text-align:center; margin:40px 0; font-size:28px;">
-            Des expériences qui m'ont permis d'acquérir des compétences riches et variées avec une vision internationale
+            Une vision internationale et globale des domaines avec une pluridisciplinarité qui me tient à coeur
         </h3>
 
+        <!-- DEUXIÈME IMAGE (Large) -->
         <div class="intro-photo"></div>
 
-        <!-- GREEN BOX ANIMATED - Reverti à un DIV non cliquable -->
+        <!-- GREEN BOX ANIMATED -->
         <div class="green-box">
             <div class="green-box-title">Ma vision de l'œnologie et de la viticulture</div>
 
             J'ai à cœur de développer une méthode de travail en accord avec ma personnalité. Rigoureuse, polyvalente et perfectionniste depuis toujours, j'ai toujours mené toutes mes missions motivée et animée par la joie d'aider et de partager mes connaissances et compétences.<br><br> Mon projet est avant tout de garantir qualité, différenciation et adéquation avec les marchés, tout en facilitant votre travail au quotidien :<br> – en rendant accessibles les dernières connaissances et l'information scientifique ;<br> – en apprenant aux plus petits domaines à conduire des essais d'amélioration continue et d'innovation ;<br> – en utilisant mon goût pour le détail pour garantir le respect de la règlementation et la maîtrise de la qualité.
 
             <br><br>
-            <!-- Le bouton est de nouveau visible et cliquable -->
             <a href="contact.html" class="btn">Découvrir comment je peux vous aider</a>
         </div>
 
