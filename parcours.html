@@ -42,76 +42,66 @@
         .menu-links a { margin-left: 20px; font-weight: bold; }
         .menu-links a:hover { color: #990000; }
 
-        /* SECTION */
         .section-container {
             max-width: 1200px;
             margin: 50px auto;
             padding: 20px;
         }
-        /* La classe .intro-photo n'est plus utilisée pour la première image, mais gardée pour la deuxième */
-        .intro-photo {
-            width: 100%;
-            height: 350px;
-            background-color: #ccc;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px var(--shadow-color);
-            margin-bottom: 40px;
+
+        /* TITLE */
+        .page-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            margin-bottom: 50px;
         }
 
-        /* NOUVELLE MISE EN PAGE POUR TEXTE À GAUCHE ET IMAGE À DROITE */
+        /* TEXT + IMAGE SECTION */
         .text-image-section {
             display: flex;
-            flex-wrap: wrap; /* Permet aux éléments de passer à la ligne sur petits écrans */
-            align-items: flex-start; /* Aligne les éléments en haut */
-            margin-bottom: 40px;
-            gap: 30px; /* Espace un peu plus grand entre texte et image */
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 60px;
         }
 
-        .text-image-section .text-block-left {
-            flex: 1; /* Prend l'espace disponible */
-            min-width: 300px; /* Taille minimale pour le texte */
+        .text-block-left {
+            flex: 1;
+            min-width: 300px;
             font-size: 18px;
             line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .text-image-section .intro-photo-right {
-            flex-shrink: 0; /* Empêche l'image de rétrécir */
-            /* LARGEUR RÉDUITE à 30% pour forcer l'aspect portrait (long et étroit) */
-            width: 30%; 
-            height: 400px; /* J'ai augmenté un peu la hauteur pour accentuer l'effet portrait */
+        /* Decorative line */
+        .decorative-line {
+            width: 80%;
+            height: 2px;
+            background-color: #d0d0d0;
+            margin: 15px auto 0 auto;
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .intro-photo-right {
+            width: 32%;
+            height: 420px;
             background-color: #ccc;
             border-radius: 12px;
+            background-size: cover;
+            background-position: center;
             box-shadow: 0 4px 12px var(--shadow-color);
-            
-            /* Styles pour le placeholder */
-            display: flex; 
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #555;
-            font-style: italic;
-            font-size: 16px;
-            padding: 10px;
         }
 
-        /* TEXTE SIMPLE */
-        .text-block {
-            font-size: 18px;
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        /* 4 images grid */
+        /* GRID IMAGES */
         .grid-photos {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin: 40px 0;
         }
-
-        .photo-item {
-            text-align: center;
-        }
+        .photo-item { text-align: center; }
 
         .photo-item img {
             width: 100%;
@@ -124,11 +114,23 @@
         .grid-photos-caption {
             font-size: 14px;
             font-style: italic;
-            margin-top: 8px;
             color: #555;
+            margin-top: 8px;
         }
 
-        /* GREEN BOX (ANIMATED LIKE HOMEPAGE SECTIONS) */
+        /* SECOND IMAGE */
+        .intro-photo {
+            width: 100%;
+            height: 350px;
+            border-radius: 12px;
+            background-size: cover;
+            background-position: center;
+            background-color: #ccc;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        /* GREEN BOX */
         .green-box {
             background-color: var(--green-box);
             padding: 35px;
@@ -139,19 +141,18 @@
             margin: 50px 0;
             transition: transform 0.4s, box-shadow 0.4s;
         }
-
         .green-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.25);
         }
 
         .green-box-title {
-            font-family: "Playfair Display", serif;
+            font-family: 'Playfair Display', serif;
             font-size: 30px;
             margin-bottom: 15px;
         }
 
-        /* BUTTONS (SAME HOVER EFFECT AS HOMEPAGE) */
+        /* BUTTON */
         .btn {
             display: inline-block;
             margin-top: 20px;
@@ -168,37 +169,19 @@
             background-color: var(--btn-hover);
             transform: translateY(-3px);
         }
-        
-        /* FOOTER */
+
         footer {
             background-color: var(--header-bg);
             text-align: center;
             padding: 20px;
-            box-shadow: 0 -4px 10px var(--shadow-color);
             margin-top: 80px;
+            box-shadow: 0 -4px 10px var(--shadow-color);
         }
-        footer a { margin: 0 10px; }
         footer a:hover { color: #990000; }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            /* Pour la grille photo, on réduit à 2 colonnes sur tablette */
-            .grid-photos { grid-template-columns: repeat(2, 1fr); }
-            /* NOTE : J'ai enlevé le changement en colonne pour le texte/image ici pour que ça reste côte à côte plus longtemps */
-        }
-
-        @media (max-width: 700px) {
-            /* C'est seulement en dessous de 700px (mobile) que l'image passera sous le texte */
-            .text-image-section { flex-direction: column; } 
-            .text-image-section .intro-photo-right { width: 100%; margin-top: 20px; height: 300px; }
-            
-            .grid-photos { grid-template-columns: 1fr; } /* 1 colonne photo sur mobile */
-        }
     </style>
 </head>
-
 <body>
-    <!-- HEADER -->
+
     <div class="menu-container">
         <div class="flags">
             <a href="parcours.html"><img src="images/fr.png" alt="FR"></a>
@@ -214,79 +197,43 @@
 
     <div class="section-container">
 
-        <!-- NOUVELLE STRUCTURE : TEXTE À GAUCHE, IMAGE À DROITE -->
+        <h1 class="page-title">Parcours</h1>
+
         <div class="text-image-section">
             <div class="text-block-left">
-                Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
+                Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie (...)
+                <div class="decorative-line"></div>
             </div>
-            <!-- EMPLACEMENT IMAGE (Style Portrait) -->
-            <div class="intro-photo-right" style="
-    background-image: url('images/IMG_8840.JPG');
-    background-size: cover;
-    background-position: center;
-">
-</div>
+            <div class="intro-photo-right" style="background-image:url('images/IMG_8840.JPG');"></div>
         </div>
 
-        <!-- PARAGRAPHE "J'AI EU LA CHANCE..." -->
         <div class="text-block">
-            J'ai eu la chance de pouvoir orienter ma formation à l'international <br> – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires <br> – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques <br> – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales <br> – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an. 
+            J'ai eu la chance de pouvoir orienter ma formation à l'international (...)
         </div>
 
-        <!-- PHOTOS + LÉGENDES -->
         <div class="grid-photos">
-            <div class="photo-item">
-                <img src="images/exp1.jpeg" alt="Provence 2022" onerror="this.onerror=null;this.src='https://placehold.co/400x180/DCDCDC/555555?text=Exp+1'">
-                <div class="grid-photos-caption">Provence, 2022</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="images/exp2.jpeg" alt="Bullas 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x180/DCDCDC/555555?text=Exp+2'">
-                <div class="grid-photos-caption">Bullas, 2025</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="images/exp3.png" alt="Tasmania 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x180/DCDCDC/555555?text=Exp+3'">
-                <div class="grid-photos-caption">Tasmania, 2023</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="images/exp4.jpeg" alt="Lanzarote 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x180/DCDCDC/555555?text=Exp+4'">
-                <div class="grid-photos-caption">Lanzarote, 2024</div>
-            </div>
+            <div class="photo-item"><img src="images/exp1.jpeg"><div class="grid-photos-caption">Provence, 2022</div></div>
+            <div class="photo-item"><img src="images/exp2.jpeg"><div class="grid-photos-caption">Bullas, 2025</div></div>
+            <div class="photo-item"><img src="images/exp3.png"><div class="grid-photos-caption">Tasmania, 2023</div></div>
+            <div class="photo-item"><img src="images/exp4.jpeg"><div class="grid-photos-caption">Lanzarote, 2024</div></div>
         </div>
 
-        <!-- NOUVEAU TITRE -->
         <h3 style="font-family:'Playfair Display', serif; text-align:center; margin:40px 0; font-size:28px;">
-            Une vision internationale et globale des domaines avec une pluridisciplinarité qui me tient à coeur
+            Une vision internationale (...)
         </h3>
 
-        <!-- DEUXIÈME IMAGE (Large) -->
-        <div class="intro-photo" style="
-    background-image: url('images/moi2.jpeg');
-    background-size: cover;
-    background-position: center;
-"></div>
+        <div class="intro-photo" style="background-image:url('images/moi2.jpeg');"></div>
 
-        <!-- GREEN BOX ANIMATED -->
         <div class="green-box">
             <div class="green-box-title">Ma vision de l'œnologie et de la viticulture</div>
-
-            J'ai à cœur de développer une méthode de travail en accord avec ma personnalité. Rigoureuse, polyvalente et perfectionniste depuis toujours, j'ai toujours mené toutes mes missions motivée et animée par la joie d'aider et de partager mes connaissances et compétences.<br><br> Mon projet est avant tout de garantir qualité, différenciation et adéquation avec les marchés, tout en facilitant votre travail au quotidien :<br> – en rendant accessibles les dernières connaissances et l'information scientifique ;<br> – en apprenant aux plus petits domaines à conduire des essais d'amélioration continue et d'innovation ;<br> – en utilisant mon goût pour le détail pour garantir le respect de la règlementation et la maîtrise de la qualité.
-
-            <br><br>
+            Rigoureuse, polyvalente (...)
             <a href="contact.html" class="btn">Découvrir comment je peux vous aider</a>
         </div>
 
     </div>
 
-    <!-- FOOTER -->
     <footer>
-        © 2025 MathViniSystems | 
-        <a href="#">Mentions légales</a> | 
-        <a href="#">Conditions générales de vente</a> | 
-        <a href="#">Données personnelles</a> | 
-        <a href="#">Cookies</a> 
+        © 2025 MathViniSystems | <a href="#">Mentions légales</a> | <a href="#">Conditions générales</a>
     </footer>
 
 </body>
