@@ -25,23 +25,44 @@
         }
 
         a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; display: block; }
 
-        /* HEADER */
+        /* --- HEADER (Code de l'Index appliqué ici) --- */
         .menu-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: var(--header-bg);
             padding: 15px 30px;
+            background-color: var(--header-bg);
             box-shadow: 0 4px 10px var(--shadow-color);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .flags img { width: 30px; margin-right: 10px; }
-        .menu-links a { margin-left: 15px; font-weight: bold; }
-        .menu-links a:hover { color: #990000; }
 
+        .menu-links a {
+            margin: 0 15px; /* Espacement identique à l'index */
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .menu-links a:hover {
+            color: #990000;
+        }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px; /* Changé de margin-right à margin-left pour matcher l'index */
+            cursor: pointer;
+            display: inline-block;
+        }
+        
+        /* Ajustement pour garder l'alignement des drapeaux correct si besoin */
+        .flags { display: flex; align-items: center; } 
+        .flags a { margin-right: 10px; }
+
+
+        /* --- CONTENU --- */
         .section-container {
             max-width: 1200px;
             margin: 50px auto;
@@ -50,9 +71,9 @@
 
         /* TITLE */
         .page-title {
-            text-align: center;
+            text-align: left;
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 32px;
             margin-bottom: 25px;
         }
 
@@ -68,7 +89,7 @@
         .text-block-left {
             flex: 1;
             min-width: 300px;
-            font-size: 18px;
+            font-size: 18px; /* Harmonisation police */
             line-height: 1.7;
             display: flex;
             flex-direction: column;
@@ -80,7 +101,7 @@
             width: 80%;
             height: 2px;
             background-color: #d0d0d0;
-            margin: 15px auto 0 auto;
+            margin: 15px auto 40px auto;
             box-shadow: 0 4px 10px var(--shadow-color);
         }
 
@@ -92,6 +113,14 @@
             background-size: cover;
             background-position: center;
             box-shadow: 0 4px 12px var(--shadow-color);
+        }
+
+        /* TEXT BLOCK SIMPLE */
+        .text-block {
+            font-size: 18px; /* Harmonisation police */
+            line-height: 1.7;
+            margin-bottom: 40px;
+            /* La suppression du </div> fautif permet à ce bloc de s'aligner correctement */
         }
 
         /* GRID IMAGES */
@@ -136,7 +165,7 @@
             padding: 35px;
             border-radius: 12px;
             box-shadow: 0 6px 15px var(--shadow-color);
-            font-size: 18px;
+            font-size: 18px; /* Harmonisation police */
             line-height: 1.7;
             margin: 50px 0;
             transition: transform 0.4s, box-shadow 0.4s;
@@ -178,6 +207,14 @@
             box-shadow: 0 -4px 10px var(--shadow-color);
         }
         footer a:hover { color: #990000; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .text-image-section { flex-direction: column; }
+            .intro-photo-right { width: 100%; height: 250px; }
+            .grid-photos { grid-template-columns: repeat(2, 1fr); }
+            .menu-links a { margin: 0 8px; font-size: 14px; } /* Ajustement mobile pour le menu */
+        }
     </style>
 </head>
 <body>
@@ -197,41 +234,47 @@
 
     <div class="section-container">
 
-        <h1 class="page-title" style="text-align:left; font-size:32px;">Parcours</h1>
+        <h1 class="page-title">Parcours</h1>
 
         <div class="text-image-section">
             <div class="text-block-left">
                 Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
             </div>
-            <div class="intro-photo-right" style="background-image:url('images/IMG_8840.JPG');"></div>
-        </div>
-        <div class="decorative-line" style="width:60%; margin:10px auto 25px auto;"></div>
-            
+            <div class="intro-photo-right" style="background-image:url('images/IMG_8840.JPG');" role="img" aria-label="Portrait"></div>
         </div>
 
+        <div class="decorative-line"></div>
+        
+        <!-- J'ai supprimé ici la div fermante en trop et l'image en double -->
+
         <div class="text-block">
-            J'ai eu la chance de pouvoir orienter ma formation à l'international <br> – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires <br> – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques <br> – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales <br> – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an.
+            J'ai eu la chance de pouvoir orienter ma formation à l'international :<br><br>
+            – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires.<br>
+            – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques.<br>
+            – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales.<br>
+            – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an.
         </div>
 
         <div class="grid-photos">
-            <div class="photo-item"><img src="images/exp1.jpeg"><div class="grid-photos-caption">Provence, 2022</div></div>
-            <div class="photo-item"><img src="images/exp2.jpeg"><div class="grid-photos-caption">Bullas, 2025</div></div>
-            <div class="photo-item"><img src="images/exp3.png"><div class="grid-photos-caption">Tasmania, 2023</div></div>
-            <div class="photo-item"><img src="images/exp4.jpeg"><div class="grid-photos-caption">Lanzarote, 2024</div></div>
+            <div class="photo-item"><img src="images/exp1.jpeg" alt="Provence"><div class="grid-photos-caption">Provence, 2022</div></div>
+            <div class="photo-item"><img src="images/exp2.jpeg" alt="Bullas"><div class="grid-photos-caption">Bullas, 2025</div></div>
+            <div class="photo-item"><img src="images/exp3.png" alt="Tasmania"><div class="grid-photos-caption">Tasmania, 2023</div></div>
+            <div class="photo-item"><img src="images/exp4.jpeg" alt="Lanzarote"><div class="grid-photos-caption">Lanzarote, 2024</div></div>
         </div>
 
         <h3 style="font-family:'Playfair Display', serif; text-align:center; margin:40px 0; font-size:28px;">
             Une vision internationale et globale des domaines avec une pluridisciplinarité qui me tient à cœur
         </h3>
 
-        <div class="intro-photo" style="background-image:url('images/moi2.jpeg');"></div>
+        <div class="intro-photo" style="background-image:url('images/moi2.jpeg');" role="img" aria-label="Vision globale"></div>
 
         <div class="green-box">
             <div class="green-box-title">Ma vision de l'œnologie et de la viticulture</div>
-            J'ai à cœur de développer une méthode de travail en accord avec ma personnalité. Rigoureuse, polyvalente et perfectionniste depuis toujours, j'ai toujours mené toutes mes missions motivée et animée par la joie d'aider et de partager mes connaissances et compétences. Mon projet est avant tout de garantir qualité, différenciation et adéquation avec les marchés, tout en facilitant votre travail au quotidien :<br>
+            J'ai à cœur de développer une méthode de travail en accord avec ma personnalité. Rigoureuse, polyvalente et perfectionniste depuis toujours, j'ai toujours mené toutes mes missions motivée et animée par la joie d'aider et de partager mes connaissances et compétences. Mon projet est avant tout de garantir qualité, différenciation et adéquation avec les marchés, tout en facilitant votre travail au quotidien :<br><br>
             – en rendant accessibles les dernières connaissances et l'information scientifique ;<br>
             – en apprenant aux plus petits domaines à conduire des essais d'amélioration continue et d'innovation ;<br>
             – en utilisant mon goût pour le détail pour garantir le respect de la règlementation et la maîtrise de la qualité.
+            <br>
             <a href="contact.html" class="btn">Découvrir comment je peux vous aider</a>
         </div>
 
