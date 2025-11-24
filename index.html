@@ -3,190 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcours – MathViniSystems</title>
+    <title>MathViniSystems</title>
+    <!-- Police pour titres et corps -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
-
     <style>
+        /* ===== Palette de couleurs ===== */
         :root {
-            --header-bg: #ECECEC;
-            --btn-bg: #ECECEC;
+            --header-bg: #ECECEC; /* gris blanc cassé */
+            --text-color: #000000;
+            --accueil-bg: #FFF8E1; /* jaune nude */
+            --consulting-bg: #D2B48C; /* marron clair */
+            --ai-bg: rgba(153,0,0,0.7); /* bordeaux transparent */
+            --softwares-bg: #A3B18A; /* vert olive léger */
+            --physical-bg: #FFF8E1; /* même que accueil */
+            --btn-bg: #ECECEC; /* gris blanc cassé */
             --btn-hover: #DADADA;
             --shadow-color: rgba(0,0,0,0.15);
-            --text-color: #000000;
-            --physical-bg: #FFF8E1;
-            --green-box: #dce8d0;
         }
 
+        /* ===== Global ===== */
         body {
             margin: 0;
             font-family: 'Roboto', sans-serif;
-            color: var(--text-color);
             background-color: var(--physical-bg);
+            color: var(--text-color);
         }
 
-        a { color: inherit; text-decoration: none; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-        /* HEADER */
+        /* ===== Entête ===== */
         .menu-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: var(--header-bg);
             padding: 15px 30px;
+            background-color: var(--header-bg);
             box-shadow: 0 4px 10px var(--shadow-color);
             position: sticky;
             top: 0;
             z-index: 100;
         }
-        .flags img { width: 30px; margin-right: 10px; }
-        .menu-links a { margin-left: 20px; font-weight: bold; }
-        .menu-links a:hover { color: #990000; }
 
-        .section-container {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 20px;
+        .menu-links a {
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s;
         }
 
-        /* TITLE */
-        .page-title {
-            text-align: center;
+        .menu-links a:hover {
+            color: #990000;
+        }
+
+        .flags img {
+            width: 30px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        /* ===== Section accueil ===== */
+        #main-section {
+            background-color: var(--accueil-bg);
+            text-align: left;
+            padding: 80px 20px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+        }
+
+        #main-section h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 28px;
+            color: var(--text-color);
             margin-bottom: 25px;
         }
 
-        /* TEXT + IMAGE SECTION */
-        .text-image-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .text-block-left {
-            flex: 1;
-            min-width: 300px;
-            font-size: 18px;
+        #main-section p {
+            max-width: 900px;
+            margin: 0 auto 30px auto;
+            font-size: 16px;
             line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
-        /* Decorative line */
-        .decorative-line {
-            width: 80%;
-            height: 2px;
-            background-color: #d0d0d0;
-            margin: 15px auto 0 auto;
-            box-shadow: 0 4px 10px var(--shadow-color);
-        }
-
-        .intro-photo-right {
-            width: 32%;
-            height: 330px;
-            background-color: #ccc;
-            border-radius: 12px;
-            background-size: cover;
-            background-position: center;
-            box-shadow: 0 4px 12px var(--shadow-color);
-        }
-
-        /* GRID IMAGES */
-        .grid-photos {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin: 40px 0;
-        }
-        .photo-item { text-align: center; }
-
-        .photo-item img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px var(--shadow-color);
-        }
-
-        .grid-photos-caption {
-            font-size: 14px;
-            font-style: italic;
-            color: #555;
-            margin-top: 8px;
-        }
-
-        /* SECOND IMAGE */
-        .intro-photo {
-            width: 100%;
-            height: 350px;
-            border-radius: 12px;
-            background-size: cover;
-            background-position: center;
-            background-color: #ccc;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 12px var(--shadow-color);
-        }
-
-        /* GREEN BOX */
-        .green-box {
-            background-color: var(--green-box);
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px var(--shadow-color);
-            font-size: 18px;
-            line-height: 1.7;
-            margin: 50px 0;
-            transition: transform 0.4s, box-shadow 0.4s;
-        }
-        .green-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.25);
-        }
-
-        .green-box-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 30px;
-            margin-bottom: 15px;
-        }
-
-        /* BUTTON */
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 18px;
-            background-color: var(--btn-bg);
-            border-radius: 8px;
+        #main-section .btn {
+            padding: 12px 25px;
             font-weight: bold;
-            border: 1px solid #bbb;
-            cursor: pointer;
+            border-radius: 6px;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
             box-shadow: 0 4px 8px var(--shadow-color);
             transition: all 0.3s;
         }
-        .btn:hover {
+
+        #main-section .btn:hover {
             background-color: var(--btn-hover);
             transform: translateY(-3px);
         }
 
+        /* ===== Sections Consulting, AI, Softwares ===== */
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 20px;
+            box-shadow: 0 6px 15px var(--shadow-color);
+            margin-bottom: 20px;
+            transition: transform 0.4s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            font-size: 16px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        section .btn {
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 6px;
+            background-color: var(--btn-bg);
+            color: var(--text-color);
+            box-shadow: 0 4px 8px var(--shadow-color);
+            transition: all 0.3s;
+        }
+
+        section .btn:hover {
+            background-color: var(--btn-hover);
+            transform: translateY(-3px);
+        }
+
+        /* ===== Couleurs par section ===== */
+        #consulting { background-color: var(--consulting-bg); color: white; flex-direction: row; }
+        #ai { background-color: var(--ai-bg); color: white; flex-direction: row; }
+        #softwares { background-color: var(--softwares-bg); color: white; flex-direction: row; }
+        #physical { background-color: var(--physical-bg); text-align: center; padding: 80px 20px; }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 900px) {
+            section { flex-direction: column; text-align: center; }
+            section h2 { margin-bottom: 15px; }
+            section p { max-width: 100%; margin-bottom: 15px; }
+            section .btn { margin-top: 15px; }
+        }
+
+        /* ===== Pied de page ===== */
         footer {
             background-color: var(--header-bg);
-            text-align: center;
             padding: 20px;
-            margin-top: 80px;
+            text-align: center;
+            font-size: 14px;
             box-shadow: 0 -4px 10px var(--shadow-color);
         }
-        footer a:hover { color: #990000; }
+
+        footer a {
+            margin: 0 10px;
+            color: #333;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #990000;
+        }
     </style>
 </head>
 <body>
 
+    <!-- ===== Entête ===== -->
     <div class="menu-container">
         <div class="flags">
-            <a href="parcours.html"><img src="images/fr.png" alt="FR"></a>
-            <a href="parcours_en.html"><img src="images/en.png" alt="EN"></a>
-            <a href="parcours_es.html"><img src="images/es.png" alt="ES"></a>
+            <img src="images/fr.png" alt="FR">
+            <img src="images/en.png" alt="EN">
+            <img src="images/es.png" alt="ES">
         </div>
         <div class="menu-links">
             <a href="index.html">Accueil</a>
@@ -195,50 +193,63 @@
         </div>
     </div>
 
-    <div cl
-
-        <h1 class="page-title" style="text-align:left; font-size:32px;">Parcours</h1>
-
-        <di"text-image-section">
-            <di"text-block-left">
-                Ingénieure agroalimentaire de formation à l'Institut Agro Rennes (Agrocampus Ouest), j'ai choisi de me spécialiser en viticulture-œnologie à l'Institut Agro Montpellier (SupAgro) en double diplôme œnologue, où j'ai eu la chance de suivre une formation exigeante qui m'a permis d'aborder aussi bien la viticulture que l'œnologie dans tous ses aspects (chimie, physiologie de la vigne, géologie, microbiologie, ampélographie, génie œnologique, analyse sensorielle, systèmes de culture, gestion des effluents, règlementation, marketing, finance).
-            </div>
-            <di"intro-photo-right" style="background-image:url('images/IMG_8840.JPG');"></div>
+    <!-- ===== Section Accueil ===== -->
+    <section id="main-section" style="background-color: var(--accueil-bg); padding: 80px 20px; box-shadow: 0 6px 15px var(--shadow-color);">
+    <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+        <h2>Simplifier ce qui est simplifiable, automatiser ce qui est automatisable, gagner du temps, avec rigueur et sans erreurs.</h2>
+        <p>
+            MathViniSystems est un ensemble de services et d'outils innovants avec pour objectif de rendre accessible à tous les domaines viticoles, quelle que soit leur taille, le pilotage facilité de leur process. Notre objectif est de répondre à plusieurs problématiques :
+        </p>
+        <ul>
+            <li>Garantir le respect des règlementations en constante évolution et la traçabilité</li>
+            <li>Faciliter l'accès à l'information et permettre l'amélioration continue</li>
+            <li>Garantir la qualité via une gestion rigoureuse des process et une identification des points de non maîtrise </li>
+            <li>Apporter des solutions d'automatisation pour les tâches répétitives ou pouvant donner lieu à des erreurs humaines </li>
+        </ul>
+        <div style="text-align: right; margin-top: 20px;">
+            <a href="#" class="btn">Découvrir mon parcours et ma vision</a>
         </div>
-        <di"decorative-line" style="width:60%; margin:10px auto 25px auto;"></div>
-            <di"intro-photo-right" style="background-image:url('images/IMG_8840.JPG');"></div>
-        </div>
-
-        <di"text-block">
-            J'ai eu la chance de pouvoir orienter ma formation à l'international <br> – j'ai commencé en France, dans l'AOC Ventoux où j'ai travaillé sur la gestion des problèmes et sur la modélisation de phénomènes fermentaires <br> – j'ai poursuivi en Australie, à l'université d'Adélaïde où je travaillais sur un projet de recherche visant à étudier un biostimulant issu du recyclage des déchets organiques <br> – j'ai ensuite découvert les vignobles de Lanzarote et les méthodes de conduite et de vinification artisanales <br> – j'ai poursuivi dans les vignobles du Sud Est de l'Espagne où j'ai entièrement restructuré un domaine de 25 hectares vers des pratiques cohérentes et justifiées pour assurer des standards de qualité élevés ; j'y ai également dirigé deux vinifications et assuré le suivi des vins et du vignoble pendant plus d'un an.
-        </div>
-
-        <di"grid-photos">
-            <di"photo-item"><img src="images/exp1.jpeg"><di"grid-photos-caption">Provence, 2022</div></div>
-            <di"photo-item"><img src="images/exp2.jpeg"><di"grid-photos-caption">Bullas, 2025</div></div>
-            <di"photo-item"><img src="images/exp3.png"><di"grid-photos-caption">Tasmania, 2023</div></div>
-            <di"photo-item"><img src="images/exp4.jpeg"><di"grid-photos-caption">Lanzarote, 2024</div></div>
-        </div>
-
-        <h3 style="font-family:'Playfair Display', serif; text-align:center; margin:40px 0; font-size:28px;">
-            Une vision internationale et globale des domaines avec une pluridisciplinarité qui me tient à cœur
-        </h3>
-
-        <di"intro-photo" style="background-image:url('images/moi2.jpeg');"></div>
-
-        <di"green-box">
-            <di"green-box-title">Ma vision de l'œnologie et de la viticulture</div>
-            J'ai à cœur de développer une méthode de travail en accord avec ma personnalité. Rigoureuse, polyvalente et perfectionniste depuis toujours, j'ai toujours mené toutes mes missions motivée et animée par la joie d'aider et de partager mes connaissances et compétences. Mon projet est avant tout de garantir qualité, différenciation et adéquation avec les marchés, tout en facilitant votre travail au quotidien :<br>
-            – en rendant accessibles les dernières connaissances et l'information scientifique ;<br>
-            – en apprenant aux plus petits domaines à conduire des essais d'amélioration continue et d'innovation ;<br>
-            – en utilisant mon goût pour le détail pour garantir le respect de la règlementation et la maîtrise de la qualité.
-            <a href="contact.html" class="btn">Découvrir comment je peux vous aider</a>
-        </div>
-
     </div>
+</section>
 
+    <!-- ===== Mathilde Consulting ===== -->
+    <section id="consulting">
+        <div>
+            <h2>Mathilde Consulting</h2>
+            <p>
+                En tant que consultante, je vous accompagne dans la restructuration de cave et de process, la mise en place d'essais et dégustations, le suivi des vins et vignoble, et la vérification des points à risque de non maîtrise de la qualité et de la règlementation.
+            </p>
+        </div>
+        <a href="#" class="btn">Prestations et services</a>
+    </section>
+
+    <!-- ===== Mathilde AI ===== -->
+    <section id="ai">
+        <div>
+            <h2>Mathilde AI</h2>
+            <p>En développement</p>
+        </div>
+        <a href="#" class="btn">Découvrir Mathilde AI</a>
+    </section>
+
+    <!-- ===== Mathilde Softwares ===== -->
+    <section id="softwares">
+        <div>
+            <h2>Mathilde Softwares</h2>
+            <p>En développement</p>
+        </div>
+        <a href="#" class="btn">Découvrir les solutions informatisées</a>
+    </section>
+
+    <!-- ===== Solutions physiques ===== -->
+    <section id="physical">
+        <h2 style="font-size:24px;">Des solutions physiques</h2>
+        <p style="font-size:14px;">En développement</p>
+    </section>
+
+    <!-- ===== Pied de page ===== -->
     <footer>
-        © 2025 MathViniSystems | 
+        &copy; 2025 MathViniSystems | 
         <a href="#">Mentions légales</a> | 
         <a href="#">Conditions générales de vente</a> | 
         <a href="#">Données personnelles</a> | 
@@ -246,5 +257,4 @@
     </footer>
 
 </body>
-</html> 
-
+</html>
