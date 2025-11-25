@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prestations et services – MathViniSystems</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+:root {
+    --header-bg: #ECECEC;
+    --text-color: #000000;
+    --physical-bg: #FFF8E1;
+    --btn-bg: #ECECEC;
+    --btn-hover: #DADADA;
+    --shadow-color: rgba(0,0,0,0.15);
+    --brown-box: #D2B48C;
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--physical-bg);
+    color: var(--text-color);
+}
+a { text-decoration: none; color: inherit; }
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+.menu-links a { margin-left: 15px; font-weight: bold; }
+.menu-links a:hover { color: #990000; }
+.section-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.category {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+.category-text {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+.category-box {
+    width: 35%;
+    background-color: var(--brown-box);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px var(--shadow-color);
+    transition: transform 0.4s;
+}
+.category-box:hover {
+    transform: translateY(-5px);
+}
+.decorative-line {
+    width: 80%;
+    height: 2px;
+    background-color: #d0d0d0;
+    margin: 30px auto;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-3px);
+}
+</style>
+</head>
+<body>
+<div class="menu-container">
+    <div class="menu-links">
+        <a href="index.html">Accueil</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+<div class="section-container">
+    <h1 class="page-title">Prestations et services</h1>
+
+    <!-- CATEGORY 1 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Mise à jour de vos documents règlementaires</div>
+            La règlementation européenne impose certains documents pour garantir les bonnes pratiques et la sécurité dans les domaines viticoles... (texte complet ici)
+        </div>
+        <div class="category-box">
+            Dans la majorité des caves où je suis passée... (texte complet ici)
+            <a href="contact.html" class="btn">Me contacter pour la rédaction</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 2 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Rédaction de protocoles, systèmes d’automatisation</div>
+            Vous travaillez sûrement avec des machines spécifiques... (texte complet ici)
+        </div>
+        <div class="category-box">
+            On ne s’en rend pas toujours compte... (texte complet ici)
+            <a href="contact.html" class="btn">Me contacter</a>
+            <a href="softwares.html" class="btn">Découvrir mes logiciels</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 3 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Mise en place d’essais et analyses sensorielles</div>
+            Avant d’investir dans une nouvelle manière de vinifier... (texte complet ici)
+        </div>
+        <div class="category-box">
+            J’ai remarqué que beaucoup de petits et moyens domaines... (texte complet ici)
+            <a href="contact.html" class="btn">Me contacter</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 4 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Audit qualité, formation, restructuration</div>
+            Au sein d’un domaine, chaque détail compte... (texte complet ici)
+        </div>
+        <div class="category-box">
+            Au cours de mes expériences... (texte complet ici)
+            <a href="contact.html" class="btn">Me contacter</a>
+        </div>
+    </div>
+    <div class="decorative-line"></div>
+
+    <!-- CATEGORY 5 -->
+    <div class="category">
+        <div class="category-text">
+            <div class="category-title">Suivi des vins, du moût à la mise</div>
+            Le suivi de vos vins est essentiel... (texte complet ici)
+        </div>
+        <div class="category-box">
+            Parce que la dégustation... (texte complet ici)
+            <a href="contact.html" class="btn">Me contacter</a>
+            <a href="ai.html" class="btn">Découvrir Mathilde AI</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
