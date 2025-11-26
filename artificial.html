@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mathilde Artificial Intelligence – MathViniSystems</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+<style>
+:root {
+    --header-bg: #ECECEC;
+    --text-color: #000000;
+    --physical-bg: #FFF8E1;
+    --btn-bg: #ECECEC;
+    --btn-hover: #DADADA;
+    --shadow-color: rgba(0,0,0,0.15);
+}
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--physical-bg);
+    color: var(--text-color);
+}
+a { text-decoration: none; color: inherit; }
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+.menu-links a { margin-left: 15px; font-weight: bold; }
+.menu-links a:hover { color: #990000; }
+.flags img { width: 30px; margin-right: 10px; }
+.section-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+.text-block {
+    flex: 1;
+    font-size: 18px;
+    line-height: 1.7;
+}
+.text-block i {
+    font-style: italic;
+}
+.video-block {
+    width: 40%;
+}
+.video-block video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--shadow-color);
+}
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
+.btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-3px);
+}
+footer {
+    background-color: var(--header-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 80px;
+    box-shadow: 0 -4px 10px var(--shadow-color);
+}
+footer a:hover { color: #990000; }
+</style>
+</head>
+<body>
+<div class="menu-container">
+    <div class="flags">
+        <img src="images/fr.png" alt="FR">
+        <img src="images/en.png" alt="EN">
+        <img src="images/es.png" alt="ES">
+    </div>
+    <div class="menu-links">
+        <a href="index.html">Accueil</a>
+        <a href="parcours.html">Parcours</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<div class="section-container">
+
+<h1 class="page-title">Mathilde Artificial Intelligence</h1>
+
+<div class="content">
+    <div class="text-block">
+        Mathilde AI est mon assistante virtuelle personnalisée.<br><br>
+        Pendant toutes mes études et dans la suite de mon parcours, j'ai écris de nombreux documents rassemblant toutes les connaissances scientifiques sur plusieurs sujets, regroupant ainsi les informations que je trouvais dans les livres, dans les articles de recherche, dans les documents règlementaires : ils ont constitué la base de mon apprentissage. Mes fiches et mes travaux personnels ont finit par couvrir l'ensemble de la viticulture et de l'œnologie grâce à l'exigence de mes études et mon désir d'approfondir tous les sujets. J'ai réuni tous ces documents dans mon intelligence artificielle afin de lui donner la capacité :<br>
+        – de répondre à des questions sur la base de mes propres connaissances. <br>
+        – de répondre à n'importe quelle demande et dans l'instant afin de s'adapter à vos horaires de travail et de vous faire gagner du temps. <br>
+        – d'être toujours à jour sur l'évolution des connaissances scientifiques grâce à sa capacité d'auto-apprentissage à partir des dernières recherches publiées. <br>
+        – de maîtriser l'esprit critique et d'être capable, contrairement aux IA classiques, d'être honnête lorsqu'il y a un manque d'information pour répondre à une question.<br><br>
+        <i>Mathilde AI est encore en développement pour vous garantir le modèle le plus instruit et performant possible, elle sera prochainement disponible.</i><br><br>
+        <a href="contact.html" class="btn">Me contacter pour en savoir plus sur Mathilde AI</a>
+    </div>
+
+    <div class="video-block">
+        <video controls>
+            <source src="videos/Video français.mov" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+    </div>
+</div>
+
+</div>
+
+<footer>
+© 2025 MathViniSystems | 
+<a href="#">Mentions légales</a> | 
+<a href="#">Conditions générales de vente</a> | 
+<a href="#">Données personnelles</a> | 
+<a href="#">Cookies</a>
+</footer>
+
+</body>
+</html>
