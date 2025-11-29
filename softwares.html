@@ -177,15 +177,17 @@
 }
 
     .btn {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 25px;
-        border-radius: 6px;
-        font-weight: bold;
-        background-color: var(--btn-bg);
-        border: 1px solid #bbb;
-        box-shadow: 0 4px 8px var(--shadow-color);
-    }
+    display: inline-block;  /* le bouton prend seulement la largeur du contenu */
+    width: auto;           /* largeur normale */
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: var(--btn-bg);
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+}
 
     .btn:hover {
         background-color: var(--btn-hover);
@@ -267,7 +269,7 @@
         </div>
 
         <div class="category-box">
-            Lorsque j'ai restructuré des caves, je me suis vite heurté à la dispersion des fichiers excels et des données, 
+            Lorsque j'ai restructuré ma dernière cave, je me suis vite heurtée à la dispersion des fichiers excels et des données, 
             à la séparation entre le calcul des doses et leur enregistrement, et à la multiplication des erreurs humaines : 
             j'ai donc centralisé tous les outils que j'avais mis en place pour aider ces petites caves dans un seul logiciel simple et personnalisé.
             <a href="contact.html" class="btn">En savoir plus</a>
