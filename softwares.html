@@ -95,7 +95,12 @@
 
     .show { display: block; }
 
-    .flags img { width: 30px; cursor: pointer; }
+    .flags img {
+    width: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    vertical-align: middle;
+}
 
     .menu-links a {
         margin: 0 15px;
@@ -153,7 +158,14 @@
         transition: transform 0.4s;
     }
 
-    .category-box:hover { transform: translateY(-5px); }
+    .category-box a {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+    .category-box:hover {
+    transform: translateY(-5px);
+}
 
     .btn {
         display: inline-block;
